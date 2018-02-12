@@ -5,6 +5,8 @@ class Products extends CI_Controller{
         $this->load->database();
         $this->load->model("products_model");
         $this->load->helper("url");
+        $this->load->helper("currency");
+
         $products = $this->products_model->buscaTodos();
         $data = array("products" =>$products);
         
