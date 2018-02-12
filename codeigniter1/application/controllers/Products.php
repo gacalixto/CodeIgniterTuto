@@ -4,6 +4,7 @@ class Products extends CI_Controller{
     {
         $this->load->database();
         $this->load->model("products_model");
+        $this->load->helper("url");
         $products = $this->products_model->buscaTodos();
         $data = array("products" =>$products);
         

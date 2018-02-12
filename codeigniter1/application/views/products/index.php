@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href=<?=base_url("css/bootstrap.css")?> />
     <script src="main.js"></script>
 </head>
 <body>
