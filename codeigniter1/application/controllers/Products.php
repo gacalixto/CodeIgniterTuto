@@ -1,11 +1,11 @@
 <?php 
+
 class Products extends CI_Controller{
     public function index()
     {
-        $this->load->database();
+        $this->output->enable_profiler(true);
         $this->load->model("products_model");
-        $this->load->helper("url");
-        $this->load->helper("currency");
+        $this->load->helper(array("url","currency","form"));
 
         $products = $this->products_model->buscaTodos();
         $data = array("products" =>$products);
