@@ -9,13 +9,20 @@
         if($user)
         {
             $this->session->set_userdata("usuario_logado",$user);
-            $data = array("mensagem" => "Logado com sucesso!");
+            $this->session->set_flashdata("success","Logado com sucesso");
 
         }else{
-            $data = array("mensagem" => "usuario ou senha inválida");
+            $this->session->set_flashdata("danger","usuario ou senha inválida");
 
 
         }
-        $this->load->view("login/autenticar",$data);
+        redirect("/");
+    }
+
+    public function logout(){
+        $this->session->unset_userdata("usuario_logado");
+        $this->session->set_flashdata("success","Deslogado com sucesso!");
+
+        redirect("/");
     }
 }
