@@ -12,4 +12,23 @@ class Products extends CI_Controller{
         
         $this->load->view("products/index.php",$data);
     }
+
+    public function form(){
+        $this->load->view("products/form.php");
+
+    }
+
+    public function novo()
+    {
+        $usuarioLogado = $this->session->userdata("usuario_logado");
+        $products = array(
+            "nome" => $this->input->post("nome"),
+            "descricao" => $this->input->post("descricao"),
+            "preco" => $this->input->post("preco"),
+            "usuario_id" => $usuarioLogado['id']
+        );
+        $this->load->model("products_model");
+        $this->products_model->salva($products);
+        redirect("/");
+    }
 }
